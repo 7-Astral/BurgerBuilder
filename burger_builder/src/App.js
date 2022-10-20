@@ -9,13 +9,7 @@ function App() {
     <Layout>
       <BurgerBuilder/>
     </Layout>
-
-   
-   
    </>
-
-
-   
   );
 }
 

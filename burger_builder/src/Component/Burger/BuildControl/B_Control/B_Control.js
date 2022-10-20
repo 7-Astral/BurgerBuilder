@@ -1,6 +1,6 @@
 import React from 'react'
 import './B_Control.css'
-export const B_Control = (props) => {
+export const BControl = (props) => {
   return (
    <div className='BuildControl'>
         <div className='Label'>{props.label}</div>

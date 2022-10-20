@@ -1,6 +1,6 @@
 import React from 'react'
 import './BuildControl.css'
-import { B_Control } from './B_Control/B_Control.js'
+import { BControl } from './B_Control/B_Control.js'
 
 export const BuildControl = (props) => {
     const controls=[
@@ -11,10 +11,12 @@ export const BuildControl = (props) => {
     ];
   return (
     <div className='BuildControls'>
+      <p>Current Price:<strong>{props.price.toFixed(2)}</strong></p>
         {controls.map((ctrl)=>
-            <B_Control key={ctrl.label} label={ctrl.label} added={()=>props.ingredientAdd(ctrl.type)} removed={()=>props.ingredientRemove(ctrl.type)}
+            <BControl key={ctrl.label} label={ctrl.label} added={()=>props.ingredientAdd(ctrl.type)} removed={()=>props.ingredientRemove(ctrl.type)}
             disabled={props.disabled[ctrl.type]}/>
         )}
+        <button className='OrderButton' disabled={!props.purchasable} onClick={props.ordered}>ORDER NOW</button>
     </div>
   )
 }
